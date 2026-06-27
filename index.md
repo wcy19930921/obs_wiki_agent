@@ -1,4 +1,4 @@
-# Wiki Index — 信息安全知识库
+# 小米辣的个人知识库
 
 > Content catalog. Every wiki page listed under its type with a one-line summary.
 > Last updated: 2026-06-26 | Total pages: 0

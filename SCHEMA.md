@@ -1,12 +1,10 @@
 # Wiki Schema
 
 ## Domain
-信息安全，涵盖：
-- 数据安全（分类分级、加密、脱敏、DLP）
-- 个人信息保护（个保法、PIPL、GDPR 合规）
-- 汽车安全合规（UN R155/R156、GB 标准、VTA/CSMS）
-- 企业安全建设（SDL、零信任、SOC、应急响应）
-- 网络安全（等保、关基、渗透测试）
+王哥的个人知识库，涵盖但不限于：
+- 信息安全（数据安全、个保、汽车安全合规、企业安全建设）
+- A股投资（个股分析、行业研究、交易策略）
+- 其他王哥关注的领域
 
 ## Conventions
 - File names: lowercase, hyphens, no spaces (e.g., `personal-information-protection-law.md`)
