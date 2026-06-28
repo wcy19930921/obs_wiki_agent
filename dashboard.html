@@ -54,6 +54,23 @@ body{font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans SC
 [data-theme="dark"] .rb-x{background:#3b2e00;color:#fcd34d}[data-theme="dark"] .rb-q{background:#3b0764;color:#c084fc}
 .empty{text-align:center;padding:3rem 1rem;color:var(--muted)}.empty h2{color:var(--text);margin-bottom:.3rem;font-size:1.1rem}
 .footer{text-align:center;padding:2rem;font-size:.76rem;color:var(--muted);border-top:1px solid var(--border);margin-top:3rem}
+/* Daily Read */
+.daily-read{max-width:640px;margin:0 auto 1.5rem;background:var(--surface);border:2px solid var(--accent);border-radius:14px;padding:1.2rem 1.5rem;box-shadow:var(--shadow-lg)}
+.daily-read .dr-header{display:flex;align-items:center;gap:.4rem;margin-bottom:.8rem}
+.daily-read .dr-header .dr-icon{font-size:1.2rem}
+.daily-read .dr-header .dr-title{font-weight:700;font-size:.95rem}
+.daily-read .dr-header .dr-badge{font-size:.7rem;padding:.1em .5em;border-radius:6px;font-weight:600}
+.dr-pending{background:#fef3c7;color:#92400e}[data-theme="dark"] .dr-pending{background:#3b2e00;color:#fcd34d}
+.dr-done{background:#dcfce7;color:#166534}[data-theme="dark"] .dr-done{background:#14532d;color:#86efac}
+.daily-read .dr-item{display:flex;align-items:center;gap:.6rem;padding:.45rem .6rem;border-radius:8px;margin:.25rem 0;cursor:pointer;transition:all .15s;text-decoration:none;color:inherit}
+.daily-read .dr-item:hover{background:var(--hover)}
+.daily-read .dr-item.read{opacity:.6}
+.daily-read .dr-check{width:22px;height:22px;border-radius:50%;border:2px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:.65rem;flex-shrink:0;transition:all .2s}
+.daily-read .dr-item.read .dr-check{background:#22c55e;border-color:#22c55e;color:#fff}
+.daily-read .dr-item:not(.read):hover .dr-check{border-color:var(--blue)}
+.daily-read .dr-num{font-size:.65rem;color:var(--muted);min-width:16px}
+.daily-read .dr-text{font-size:.85rem;flex:1}
+.daily-read .dr-domain{font-size:.68rem;color:var(--muted)}
 @media(max-width:768px){.detail-row{grid-template-columns:1fr}.domain-grid{grid-template-columns:repeat(2,1fr)}.hero-stats{flex-wrap:wrap;gap:1rem}}
 </style>
 </head>
@@ -74,6 +91,8 @@ body{font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans SC
   <div class="hero-stats" id="hero-stats"></div>
 </div>
 
+<div id="dailyReadSection"></div>
+
 <div class="container" id="app"><div class="empty"><p>加载中...</p></div></div>
 
 <div class="footer">持续积累的知识复利 · Powered by Hermes Agent</div>
@@ -90,7 +109,36 @@ var TL={entity:'rb-e',concept:'rb-c',comparison:'rb-x',query:'rb-q'};
 var DOMS_LOOKUP={'it-security':{emoji:'🔐',name:'IT网络与数据安全'},'auto-security':{emoji:'🚗',name:'智能网联汽车安全'},'investment':{emoji:'📈',name:'投资之路'},'daily':{emoji:'📝',name:'日常记录'},'ai-learning':{emoji:'🤖',name:'AI学习'},'other':{emoji:'📦',name:'其他'}};
 var allTags=[],allPages=[];
 
+function loadDailyRead(){
+  var today=new Date().toISOString().slice(0,10);
+  var stored=localStorage.getItem('daily_read_'+today);
+  var read=stored?JSON.parse(stored):[false,false];
+  
+  fetch('daily_read.json').then(function(r){return r.json()}).then(function(d){
+    if(d.date!==today){document.getElementById('dailyReadSection').innerHTML='';return}
+    var allRead=read[0]&&read[1];
+    var html='<div class="daily-read">';
+    html+='<div class="dr-header"><span class="dr-icon">📖</span><span class="dr-title">每日必读</span><span class="dr-badge '+(allRead?'dr-done':'dr-pending')+'">'+(allRead?'✅ 已完成':'⏳ 待完成')+'</span></div>';
+    d.articles.forEach(function(a,i){
+      html+='<div class="dr-item'+(read[i]?' read':'')+'" onclick="markDailyRead('+i+',\''+a.path+'\')"><span class="dr-num">'+(i+1)+'</span><span class="dr-check">'+(read[i]?'✓':'')+'</span><div><div class="dr-text">'+a.title+'</div><div class="dr-domain">'+(DOMS_LOOKUP[a.domain]?DOMS_LOOKUP[a.domain].emoji+' ':'')+TYPES[a.type]+'</div></div></div>';
+    });
+    html+='<div style="margin-top:.6rem;font-size:.72rem;color:var(--muted)">'+(allRead?'全部读完，明天继续加油 🔥':'点击文章跳转阅读，读完自动标记')+'</div>';
+    html+='</div>';
+    document.getElementById('dailyReadSection').innerHTML=html;
+  }).catch(function(){});
+}
+
+function markDailyRead(idx,path){
+  if(event)event.stopPropagation();
+  var today=new Date().toISOString().slice(0,10);
+  var stored=localStorage.getItem('daily_read_'+today);
+  var read=stored?JSON.parse(stored):[false,false];
+  read[idx]=true;localStorage.setItem('daily_read_'+today,JSON.stringify(read));
+  window.open('index.html?page='+encodeURIComponent(path),'_blank');
+}
+
 async function init(){
+  loadDailyRead();
   try{
     var sr=await fetch('stats.json');var s=await sr.json();
     var dr=await fetch('domains.json');var dm=await dr.json();

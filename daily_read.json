@@ -1,0 +1,27 @@
+{
+  "date": "2026-06-28",
+  "articles": [
+    {
+      "path": "entities/app-security-management.md",
+      "title": "APP安全管理制度",
+      "domain": "it-security",
+      "type": "concept"
+    },
+    {
+      "path": "entities/data-classification-implementation.md",
+      "title": "数据分类分级管理实施细则",
+      "domain": "it-security",
+      "type": "concept"
+    }
+  ],
+  "history": {
+    "entities/app-security-management.md": {
+      "times": 1,
+      "last_read": ""
+    },
+    "entities/data-classification-implementation.md": {
+      "times": 1,
+      "last_read": ""
+    }
+  }
+}
