@@ -1,28 +1,256 @@
 {
-  "generated_at": "2026-06-28 09:43:43",
-  "total_pages": 0,
+  "generated_at": "2026-06-28 10:05:46",
+  "total_pages": 15,
   "type_count": {
     "entity": 0,
-    "concept": 0,
+    "concept": 15,
     "comparison": 0,
     "query": 0
   },
-  "top_tags": [],
+  "top_tags": [
+    {
+      "name": "standard",
+      "count": 11
+    },
+    {
+      "name": "data-security",
+      "count": 3
+    },
+    {
+      "name": "governance",
+      "count": 3
+    },
+    {
+      "name": "incident-response",
+      "count": 2
+    },
+    {
+      "name": "endpoint",
+      "count": 2
+    },
+    {
+      "name": "compliance",
+      "count": 2
+    },
+    {
+      "name": "app-security",
+      "count": 1
+    },
+    {
+      "name": "cloud",
+      "count": 1
+    },
+    {
+      "name": "architecture",
+      "count": 1
+    },
+    {
+      "name": "social-engineering",
+      "count": 1
+    },
+    {
+      "name": "vulnerability",
+      "count": 1
+    },
+    {
+      "name": "hw",
+      "count": 1
+    },
+    {
+      "name": "network-security",
+      "count": 1
+    },
+    {
+      "name": "training",
+      "count": 1
+    },
+    {
+      "name": "regulation",
+      "count": 1
+    },
+    {
+      "name": "catalog",
+      "count": 1
+    },
+    {
+      "name": "supply-chain",
+      "count": 1
+    },
+    {
+      "name": "risk-management",
+      "count": 1
+    },
+    {
+      "name": "third-party",
+      "count": 1
+    },
+    {
+      "name": "dlp",
+      "count": 1
+    },
+    {
+      "name": "usb",
+      "count": 1
+    },
+    {
+      "name": "ueba",
+      "count": 1
+    }
+  ],
+  "domains": [
+    {
+      "id": "it-security",
+      "name": "IT网络与数据安全",
+      "emoji": "🔐",
+      "count": 15
+    },
+    {
+      "id": "auto-security",
+      "name": "智能网联汽车安全",
+      "emoji": "🚗",
+      "count": 0
+    },
+    {
+      "id": "investment",
+      "name": "投资之路",
+      "emoji": "📈",
+      "count": 0
+    },
+    {
+      "id": "daily",
+      "name": "日常记录",
+      "emoji": "📝",
+      "count": 0
+    },
+    {
+      "id": "ai-learning",
+      "name": "AI学习",
+      "emoji": "🤖",
+      "count": 0
+    }
+  ],
   "confidence_count": {
     "high": 0,
     "medium": 0,
     "low": 0
   },
   "contested": 0,
-  "domains": {
-    "信息安全": 0,
-    "A股投资": 0,
-    "其他": 0
-  },
-  "recent": [],
+  "recent": [
+    {
+      "title": "安全架构基本法",
+      "type": "concept",
+      "path": "entities/security-architecture-basics.md",
+      "domain": "it-security",
+      "tags": [
+        "standard",
+        "architecture"
+      ],
+      "updated": "2026-06-28"
+    },
+    {
+      "title": "信息安全红线制度",
+      "type": "concept",
+      "path": "entities/infosec-redline-policy.md",
+      "domain": "it-security",
+      "tags": [
+        "standard",
+        "governance"
+      ],
+      "updated": "2026-06-28"
+    },
+    {
+      "title": "社会工程学攻击违规处罚实施规范",
+      "type": "concept",
+      "path": "entities/social-engineering-penalty.md",
+      "domain": "it-security",
+      "tags": [
+        "standard",
+        "social-engineering"
+      ],
+      "updated": "2026-06-28"
+    },
+    {
+      "title": "网络安全事件管理办法",
+      "type": "concept",
+      "path": "entities/network-incident-management.md",
+      "domain": "it-security",
+      "tags": [
+        "standard",
+        "incident-response"
+      ],
+      "updated": "2026-06-28"
+    },
+    {
+      "title": "APP安全管理制度",
+      "type": "concept",
+      "path": "entities/app-security-management.md",
+      "domain": "it-security",
+      "tags": [
+        "standard",
+        "app-security"
+      ],
+      "updated": "2026-06-28"
+    },
+    {
+      "title": "数据分类分级管理实施细则",
+      "type": "concept",
+      "path": "entities/data-classification-implementation.md",
+      "domain": "it-security",
+      "tags": [
+        "standard",
+        "data-security"
+      ],
+      "updated": "2026-06-28"
+    },
+    {
+      "title": "数据安全管理制度",
+      "type": "concept",
+      "path": "entities/data-security-management-policy.md",
+      "domain": "it-security",
+      "tags": [
+        "standard",
+        "data-security"
+      ],
+      "updated": "2026-06-28"
+    },
+    {
+      "title": "漏洞问责管理规范",
+      "type": "concept",
+      "path": "entities/vulnerability-accountability.md",
+      "domain": "it-security",
+      "tags": [
+        "standard",
+        "vulnerability"
+      ],
+      "updated": "2026-06-28"
+    },
+    {
+      "title": "信息安全违规问责管理办法",
+      "type": "concept",
+      "path": "entities/infosec-violation-accountability.md",
+      "domain": "it-security",
+      "tags": [
+        "standard",
+        "governance"
+      ],
+      "updated": "2026-06-28"
+    },
+    {
+      "title": "办公云桌面IT安全管理规范",
+      "type": "concept",
+      "path": "entities/office-cloud-desktop-security.md",
+      "domain": "it-security",
+      "tags": [
+        "standard",
+        "endpoint",
+        "cloud"
+      ],
+      "updated": "2026-06-28"
+    }
+  ],
   "trend": {
-    "30d": 0,
-    "14d": 0,
-    "7d": 0
+    "30d": 15,
+    "14d": 15,
+    "7d": 15
   }
 }
