@@ -1,0 +1,176 @@
+[
+  {
+    "title": "APP安全管理制度",
+    "type": "concept",
+    "path": "entities/app-security-management.md",
+    "domain": "it-security",
+    "tags": [
+      "standard",
+      "app-security"
+    ],
+    "updated": "2026-06-28"
+  },
+  {
+    "title": "数据分类分级管理实施细则",
+    "type": "concept",
+    "path": "entities/data-classification-implementation.md",
+    "domain": "it-security",
+    "tags": [
+      "standard",
+      "data-security"
+    ],
+    "updated": "2026-06-28"
+  },
+  {
+    "title": "数据安全管理制度",
+    "type": "concept",
+    "path": "entities/data-security-management-policy.md",
+    "domain": "it-security",
+    "tags": [
+      "standard",
+      "data-security"
+    ],
+    "updated": "2026-06-28"
+  },
+  {
+    "title": "信息安全红线制度",
+    "type": "concept",
+    "path": "entities/infosec-redline-policy.md",
+    "domain": "it-security",
+    "tags": [
+      "standard",
+      "governance"
+    ],
+    "updated": "2026-06-28"
+  },
+  {
+    "title": "信息安全违规问责管理办法",
+    "type": "concept",
+    "path": "entities/infosec-violation-accountability.md",
+    "domain": "it-security",
+    "tags": [
+      "standard",
+      "governance"
+    ],
+    "updated": "2026-06-28"
+  },
+  {
+    "title": "网络安全事件管理办法",
+    "type": "concept",
+    "path": "entities/network-incident-management.md",
+    "domain": "it-security",
+    "tags": [
+      "standard",
+      "incident-response"
+    ],
+    "updated": "2026-06-28"
+  },
+  {
+    "title": "办公云桌面IT安全管理规范",
+    "type": "concept",
+    "path": "entities/office-cloud-desktop-security.md",
+    "domain": "it-security",
+    "tags": [
+      "standard",
+      "endpoint",
+      "cloud"
+    ],
+    "updated": "2026-06-28"
+  },
+  {
+    "title": "安全架构基本法",
+    "type": "concept",
+    "path": "entities/security-architecture-basics.md",
+    "domain": "it-security",
+    "tags": [
+      "standard",
+      "architecture"
+    ],
+    "updated": "2026-06-28"
+  },
+  {
+    "title": "社会工程学攻击违规处罚实施规范",
+    "type": "concept",
+    "path": "entities/social-engineering-penalty.md",
+    "domain": "it-security",
+    "tags": [
+      "standard",
+      "social-engineering"
+    ],
+    "updated": "2026-06-28"
+  },
+  {
+    "title": "漏洞问责管理规范",
+    "type": "concept",
+    "path": "entities/vulnerability-accountability.md",
+    "domain": "it-security",
+    "tags": [
+      "standard",
+      "vulnerability"
+    ],
+    "updated": "2026-06-28"
+  },
+  {
+    "title": "数据安全定责体系",
+    "type": "concept",
+    "path": "concepts/data-security-responsibility.md",
+    "domain": "it-security",
+    "tags": [
+      "governance",
+      "data-security",
+      "compliance"
+    ],
+    "updated": "2026-06-28"
+  },
+  {
+    "title": "护网行动安全方案",
+    "type": "concept",
+    "path": "concepts/hw-defense-plan.md",
+    "domain": "it-security",
+    "tags": [
+      "hw",
+      "incident-response",
+      "network-security",
+      "training"
+    ],
+    "updated": "2026-06-28"
+  },
+  {
+    "title": "安全标准规范目录",
+    "type": "concept",
+    "path": "concepts/security-standards-catalog.md",
+    "domain": "it-security",
+    "tags": [
+      "standard",
+      "regulation",
+      "compliance",
+      "catalog"
+    ],
+    "updated": "2026-06-28"
+  },
+  {
+    "title": "合作方与供应链安全管理",
+    "type": "concept",
+    "path": "concepts/supply-chain-security.md",
+    "domain": "it-security",
+    "tags": [
+      "supply-chain",
+      "risk-management",
+      "third-party"
+    ],
+    "updated": "2026-06-28"
+  },
+  {
+    "title": "USB写入权限与终端安全规范",
+    "type": "concept",
+    "path": "concepts/usb-endpoint-security.md",
+    "domain": "it-security",
+    "tags": [
+      "endpoint",
+      "dlp",
+      "usb",
+      "ueba"
+    ],
+    "updated": "2026-06-28"
+  }
+]

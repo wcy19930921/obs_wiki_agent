@@ -139,4 +139,32 @@ if __name__ == "__main__":
     outpath = os.path.join(WIKI, "stats.json")
     with open(outpath, 'w') as f:
         json.dump(stats, f, ensure_ascii=False, indent=2)
+    
+    # Also output page list for domain filtering
+    pages_list = []
+    for d in PAGE_DIRS:
+        dirpath = os.path.join(WIKI, d)
+        if not os.path.isdir(dirpath):
+            continue
+        for fname in sorted(os.listdir(dirpath)):
+            if not fname.endswith('.md'):
+                continue
+            fpath = os.path.join(dirpath, fname)
+            with open(fpath, 'r') as f:
+                fm = parse_frontmatter(f.read())
+            domain = classify_domain(fm.get("tags", []), fm.get("domain", ""))
+            pages_list.append({
+                "title": fm.get("title", fname.replace('.md', '').replace('-', ' ').title()),
+                "type": fm.get("type", d.rstrip('s')),
+                "path": f"{d}/{fname}",
+                "domain": domain,
+                "tags": fm.get("tags", [])[:5],
+                "updated": fm.get("updated", ""),
+            })
+    
+    list_path = os.path.join(WIKI, "page_list.json")
+    with open(list_path, 'w') as f:
+        json.dump(pages_list, f, ensure_ascii=False, indent=2)
+    
     print(f"✅ stats.json: {stats['total_pages']} 页, {len(DOMAINS)} 板块")
+    print(f"✅ page_list.json: {len(pages_list)} 条")
