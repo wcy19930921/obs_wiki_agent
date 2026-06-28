@@ -2,39 +2,49 @@
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>小米辣的个人知识库</title>
+<title>🌶️ 小米辣的知识库</title>
 <style>
-:root{--bg:#0f172a;--surface:#1e293b;--text:#e2e8f0;--muted:#94a3b8;--accent:#f59e0b;--accent2:#38bdf8;--border:#334155}
+:root{--bg:#f8f9fa;--surface:#fff;--text:#1a1a2e;--muted:#6b7280;--accent:#f59e0b;--accent2:#3b82f6;--border:#e5e7eb;--shadow:0 1px 3px rgba(0,0,0,.06);--card-radius:10px}
 *{box-sizing:border-box;margin:0;padding:0}
-body{font-family:-apple-system,"Noto Sans SC",sans-serif;background:var(--bg);color:var(--text);min-height:100vh}
-.header{background:linear-gradient(135deg,#1e293b,#0f172a);border-bottom:1px solid var(--border);padding:.9rem 1.5rem;display:flex;align-items:center;gap:.8rem;flex-wrap:wrap}
-.header a{color:var(--accent2);text-decoration:none;font-size:.85rem}
-.header h1{font-size:1.15rem;color:var(--accent);flex:1;margin:0}
-.container{max-width:1100px;margin:0 auto;padding:1.2rem}
-.sub-section{margin-bottom:1.8rem}
-.sub-heading{font-size:.95rem;font-weight:600;margin-bottom:.5rem;padding-bottom:.3rem;border-bottom:1px solid var(--border);display:flex;align-items:baseline;gap:.3rem}
-.sub-count{font-weight:400;color:var(--muted);font-size:.76rem}
-.sub-desc{font-size:.72rem;color:var(--muted);margin-bottom:.5rem}
-.card-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:.5rem}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans SC",sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
+.header{background:var(--surface);border-bottom:1px solid var(--border);padding:.9rem 2rem;display:flex;align-items:center;gap:.8rem;position:sticky;top:0;z-index:10}
+.header a{color:var(--muted);text-decoration:none;font-size:.85rem;transition:color .15s}.header a:hover{color:var(--accent2)}
+.header h1{font-size:1.1rem;font-weight:600;flex:1}
+.container{max-width:1060px;margin:0 auto;padding:1.8rem 1.5rem}
+.breadcrumb{font-size:.82rem;color:var(--muted);margin-bottom:1.5rem}
+.breadcrumb a{color:var(--accent2);text-decoration:none}
+.stats-bar{font-size:.82rem;color:var(--muted);margin-bottom:1.5rem;padding-bottom:1rem;border-bottom:1px solid var(--border)}
+.sub-section{margin-bottom:2rem}
+.sub-heading{font-size:.9rem;font-weight:600;margin-bottom:.6rem;display:flex;align-items:baseline;gap:.5rem}
+.sub-heading .label{color:var(--text)}
+.sub-heading .count{font-size:.76rem;color:var(--muted);font-weight:400;background:var(--border);padding:.1em .6em;border-radius:10px}
+.sub-desc{font-size:.76rem;color:var(--muted);margin-bottom:.7rem}
+.card-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:.6rem}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:var(--card-radius);padding:.9rem 1rem;transition:all .15s;cursor:pointer;box-shadow:var(--shadow)}
+.card:hover{transform:translateY(-1px);box-shadow:0 2px 8px rgba(0,0,0,.08);border-color:var(--accent2)}
+.card-title{font-weight:600;font-size:.85rem;line-height:1.4;margin-bottom:.3rem}
+.card-meta{font-size:.7rem;color:var(--muted)}
+.card-tags{margin-top:.4rem}
+.tag{display:inline-block;padding:.1em .5em;border-radius:4px;font-size:.66rem;background:#eff6ff;color:#2563eb;margin:.1rem}
+.badge{padding:.1em .4em;border-radius:3px;font-size:.62rem;font-weight:600}
+.b-entity{background:#eff6ff;color:#2563eb}.b-concept{background:#f0fdf4;color:#16a34a}
+.b-comparison{background:#fffbeb;color:#d97706}.b-query{background:#faf5ff;color:#9333ea}
+.reading{max-width:720px;margin:0 auto;padding:2rem 0}
+.reading h1{font-size:1.5rem;margin-bottom:1rem;line-height:1.3}
+.reading h2{font-size:1.15rem;margin:1.8rem 0 .5rem;padding-bottom:.3rem;border-bottom:1px solid var(--border)}
+.reading h3{font-size:1rem;margin:1.2rem 0 .3rem}
+.reading p{margin:.6rem 0;font-size:.95rem;line-height:1.8}
+.reading ul,.reading ol{margin:.5rem 0;padding-left:1.5rem}
+.reading li{margin:.25rem 0;line-height:1.7}
+.reading code{background:#f1f5f9;padding:.12em .35em;border-radius:3px;font-size:.88em}
+.reading pre{background:#1e293b;color:#e2e8f0;padding:1rem;border-radius:8px;overflow-x:auto;margin:.8rem 0;font-size:.82rem;line-height:1.6}
+.reading pre code{background:none;color:inherit;padding:0}
+.reading blockquote{border-left:3px solid var(--accent2);padding:.3rem 1rem;margin:.8rem 0;color:var(--muted);font-style:italic}
+.back-link{display:inline-flex;align-items:center;gap:.3rem;color:var(--accent2);text-decoration:none;font-size:.85rem;margin-bottom:1.5rem}
+.empty-state{text-align:center;padding:4rem 1rem;color:var(--muted)}
+.empty-state h2{font-size:1.15rem;color:var(--text);margin-bottom:.3rem}
 @media(max-width:1024px){.card-grid{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:640px){.card-grid{grid-template-columns:1fr}}
-.card{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:.8rem 1rem}
-.card:hover{border-color:var(--accent2);cursor:pointer}
-.card-title{font-weight:600;font-size:.88rem}
-.card-meta{font-size:.7rem;color:var(--muted);margin-top:.15rem}
-.card-tags{margin-top:.25rem}
-.tag{display:inline-block;padding:.1em .45em;border-radius:4px;font-size:.66rem;background:#1e3a5f;color:#7dd3fc;margin:.1rem}
-.badge{padding:.1em .4em;border-radius:4px;font-size:.65rem;font-weight:600}
-.b-entity{background:#1e3a5f;color:#7dd3fc}.b-concept{background:#14532d;color:#86efac}
-.md-view{line-height:1.8;padding-bottom:2rem}
-.md-view h1{font-size:1.25rem;margin:1rem 0}.md-view h2{font-size:1.05rem;margin:1.2rem 0 .4rem;border-bottom:1px solid var(--border);padding-bottom:.2rem}
-.md-view h3{font-size:.95rem;margin:.8rem 0 .3rem}
-.md-view p{margin:.5rem 0}.md-view ul,.md-view ol{margin:.4rem 0;padding-left:1.5rem}.md-view li{margin:.2rem 0}
-.md-view code{background:var(--border);padding:.12em .35em;border-radius:3px;font-size:.83em}
-.md-view pre{background:#0f172a;padding:.8rem;border-radius:6px;overflow-x:auto;margin:.8rem 0;border:1px solid var(--border);font-size:.8rem}
-.md-view blockquote{border-left:3px solid var(--accent2);padding:.3rem .8rem;margin:.6rem 0;color:var(--muted)}
-.empty{text-align:center;padding:3rem 1rem;color:var(--muted)}.empty h3{font-size:1rem;color:var(--text)}
-@media(max-width:768px){.header{padding:.7rem}.container{padding:.7rem}}
+@media(max-width:640px){.card-grid{grid-template-columns:1fr}.header{padding:.7rem 1rem}}
 </style>
 </head>
 <body>
@@ -45,10 +55,10 @@ body{font-family:-apple-system,"Noto Sans SC",sans-serif;background:var(--bg);co
   <a href="#" id="backBtn" style="display:none" onclick="showList()">← 返回列表</a>
 </div>
 
-<div class="container" id="content"><div class="empty"><p>加载中...</p></div></div>
+<div class="container" id="content"><div class="empty-state"><p>加载中...</p></div></div>
 
 <script>
-var DOMAINS={
+var DOMS={
   'it-security':{emoji:'🔐',name:'IT网络与数据安全'},
   'auto-security':{emoji:'🚗',name:'智能网联汽车安全'},
   'investment':{emoji:'📈',name:'投资之路'},
@@ -59,51 +69,44 @@ var DOMAINS={
 var TYPES={entity:'实体',concept:'概念',comparison:'对比',query:'查询'};
 var allPages=[],subDomains={},currentDomain='';
 
+function esc(s){return s.replace(/'/g,"\\'")}
+
 async function init(){
   var p=new URLSearchParams(location.search);
   currentDomain=p.get('domain')||'';
   if(!currentDomain){location.href='dashboard.html';return}
-  var d=DOMAINS[currentDomain]||{emoji:'📂',name:currentDomain};
+  var d=DOMS[currentDomain]||{emoji:'📂',name:currentDomain};
   document.getElementById('htitle').textContent=d.emoji+' '+d.name;
-  try{
-    var r1=await fetch('page_list.json');allPages=await r1.json();
-    try{var r2=await fetch('sub_domains.json');var sd=await r2.json();subDomains=sd.sub_domains[currentDomain]||[]}catch(e){}
-  }catch(e){allPages=[]}
+  try{var r1=await fetch('page_list.json');allPages=await r1.json()}catch(e){allPages=[]}
+  try{var r2=await fetch('sub_domains.json');var sd=await r2.json();subDomains=sd.sub_domains[currentDomain]||[]}catch(e){}
   showList()
 }
 
-function filterPages(){return allPages.filter(function(p){return p.domain===currentDomain})}
-
 function showList(){
   document.getElementById('backBtn').style.display='none';
-  var pages=filterPages();
+  var pages=allPages.filter(function(p){return p.domain===currentDomain});
   if(pages.length===0){
-    document.getElementById('content').innerHTML='<div class="empty"><h3>📭 暂无文档</h3><p style="margin-top:1rem;font-size:.85rem"><a href="dashboard.html" style="color:var(--accent2)">← 返回仪表盘</a></p></div>';
+    document.getElementById('content').innerHTML='<div class="empty-state"><h2>📭 暂无文档</h2><p style="margin-top:.5rem"><a href="dashboard.html" style="color:var(--accent2)">← 返回仪表盘</a></p></div>';
     return
   }
   var groups={};
   pages.forEach(function(p){var sd=p.sub_domain||'other';if(!groups[sd])groups[sd]=[];groups[sd].push(p)});
-  var html='<div style="font-size:.82rem;color:var(--muted);margin-bottom:1rem">共 <strong>'+pages.length+'</strong> 篇，分 '+Object.keys(groups).length+' 个板块</div>';
-  
+  var html='<div class="breadcrumb"><a href="dashboard.html">仪表盘</a> / '+DOMS[currentDomain].name+'</div>';
+  html+='<div class="stats-bar">共 <strong>'+pages.length+'</strong> 篇，分 <strong>'+Object.keys(groups).length+'</strong> 个板块</div>';
+
   var order=subDomains.map(function(s){return s.id});
   if(order.indexOf('other')<0)order.push('other');
   Object.keys(groups).forEach(function(k){if(order.indexOf(k)<0)order.push(k)});
 
   order.forEach(function(sdId){
     if(!groups[sdId])return;
-    var info=null;
-    subDomains.forEach(function(s){if(s.id===sdId)info=s});
+    var info=null;subDomains.forEach(function(s){if(s.id===sdId)info=s});
     var name=info?info.emoji+' '+info.name:sdId;
-    html+='<div class="sub-section">';
-    html+='<div class="sub-heading">'+name+'<span class="sub-count">'+groups[sdId].length+' 篇</span></div>';
+    html+='<div class="sub-section"><div class="sub-heading"><span class="label">'+name+'</span><span class="count">'+groups[sdId].length+'</span></div>';
     if(info&&info.desc)html+='<div class="sub-desc">'+info.desc+'</div>';
     html+='<div class="card-grid">';
     groups[sdId].forEach(function(p){
-      html+='<div class="card" onclick="viewPage(\''+p.path+'\',\''+p.title.replace(/'/g,"\\'")+'\')">'+
-        '<div class="card-title">'+p.title+'</div>'+
-        '<div class="card-meta"><span class="badge b-'+p.type+'">'+TYPES[p.type]+'</span> · '+p.updated+'</div>'+
-        '<div class="card-tags">'+(p.tags||[]).slice(0,4).map(function(t){return '<span class="tag">'+t+'</span>'}).join('')+'</div>'+
-      '</div>';
+      html+='<div class="card" onclick="viewPage(\''+p.path+'\',\''+esc(p.title)+'\')"><div class="card-title">'+p.title+'</div><div class="card-meta"><span class="badge b-'+p.type+'">'+TYPES[p.type]+'</span> · '+p.updated+'</div><div class="card-tags">'+(p.tags||[]).slice(0,3).map(function(t){return '<span class="tag">'+t+'</span>'}).join('')+'</div></div>';
     });
     html+='</div></div>';
   });
@@ -113,25 +116,17 @@ function showList(){
 async function viewPage(path,title){
   document.getElementById('htitle').textContent=title;
   document.getElementById('backBtn').style.display='inline';
-  document.getElementById('content').innerHTML='<div class="empty"><p>加载中...</p></div>';
+  document.getElementById('content').innerHTML='<div class="empty-state"><p>加载中...</p></div>';
   try{
     var r=await fetch(path);var md=await r.text();
     md=md.replace(/^---[\s\S]*?---\n*/,'');
     md=md.replace(/\[\[([^\]]+)\]\]/g,'$1');
-    var h=md.split('\n').map(function(l){
-      l=l.trim();if(!l)return'';
-      if(l.startsWith('# '))return'<h1>'+l.slice(2)+'</h1>';
-      if(l.startsWith('## '))return'<h2>'+l.slice(3)+'</h2>';
-      if(l.startsWith('### '))return'<h3>'+l.slice(4)+'</h3>';
-      if(l.startsWith('- '))return'<li>'+l.slice(2)+'</li>';
-      if(l.startsWith('> '))return'<blockquote>'+l.slice(2)+'</blockquote>';
-      if(l.startsWith('```'))return'';
-      return'<p>'+l+'</p>'
-    }).join('\n');
-    h=h.replace(/<li>[\s\S]*?<\/li>/g,function(m){return'<ul>'+m+'</ul>'});
-    document.getElementById('content').innerHTML='<div class="md-view">'+h+'</div>'
+    var h=md.split('\n').map(function(l){l=l.trim();if(!l)return'';if(l.startsWith('# '))return'<h1>'+l.slice(2)+'</h1>';if(l.startsWith('## '))return'<h2>'+l.slice(3)+'</h2>';if(l.startsWith('### '))return'<h3>'+l.slice(4)+'</h3>';if(l.startsWith('- '))return'<li>'+l.slice(2)+'</li>';if(l.startsWith('> '))return'<blockquote>'+l.slice(2)+'</blockquote>';if(l.match(/^\d+\. /))return'<li>'+l.replace(/^\d+\. /,'')+'</li>';return'<p>'+l+'</p>'}).join('\n');
+    h=h.replace(/((?:<li>[^<]*<\/li>\s*)+)/g,'<ul>$1</ul>');
+    h=h.replace(/<p><\/p>/g,'');
+    document.getElementById('content').innerHTML='<div class="reading">'+h+'</div>'
   }catch(e){
-    document.getElementById('content').innerHTML='<div class="empty"><p>加载失败</p></div>'
+    document.getElementById('content').innerHTML='<div class="empty-state"><p>加载失败</p></div>'
   }
 }
 
