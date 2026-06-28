@@ -3,7 +3,7 @@ title: 合作方与供应链安全管理
 created: 2026-06-28
 updated: 2026-06-28
 type: concept
-tags: [supply-chain, risk-management, third-party]
+tags: [供应链, 风险管理, 第三方]
 domain: it-security
 sources: [飞书知识库/数据安全]
 ---

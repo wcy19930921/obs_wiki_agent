@@ -3,7 +3,7 @@ title: 数据分类分级管理实施细则
 created: 2026-06-28
 updated: 2026-06-28
 type: concept
-tags: [standard, data-security]
+tags: [制度, 数据安全]
 domain: it-security
 sources: [飞书知识库/数据安全]
 ---

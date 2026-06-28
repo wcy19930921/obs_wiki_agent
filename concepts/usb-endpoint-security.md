@@ -3,7 +3,7 @@ title: USB写入权限与终端安全规范
 created: 2026-06-28
 updated: 2026-06-28
 type: concept
-tags: [endpoint, dlp, usb, ueba]
+tags: [终端安全, 数据防泄漏, USB管控, 行为分析]
 domain: it-security
 sources: [飞书知识库/数据安全]
 ---

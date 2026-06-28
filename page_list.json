@@ -4,10 +4,10 @@
     "type": "concept",
     "path": "entities/app-security-management.md",
     "domain": "it-security",
-    "sub_domain": "app-security",
+    "sub_domain": "应用安全",
     "tags": [
-      "standard",
-      "app-security"
+      "制度",
+      "应用安全"
     ],
     "updated": "2026-06-28"
   },
@@ -16,10 +16,10 @@
     "type": "concept",
     "path": "entities/data-classification-implementation.md",
     "domain": "it-security",
-    "sub_domain": "data-security",
+    "sub_domain": "数据安全",
     "tags": [
-      "standard",
-      "data-security"
+      "制度",
+      "数据安全"
     ],
     "updated": "2026-06-28"
   },
@@ -28,10 +28,10 @@
     "type": "concept",
     "path": "entities/data-security-management-policy.md",
     "domain": "it-security",
-    "sub_domain": "data-security",
+    "sub_domain": "数据安全",
     "tags": [
-      "standard",
-      "data-security"
+      "制度",
+      "数据安全"
     ],
     "updated": "2026-06-28"
   },
@@ -40,10 +40,10 @@
     "type": "concept",
     "path": "entities/infosec-redline-policy.md",
     "domain": "it-security",
-    "sub_domain": "governance",
+    "sub_domain": "治理",
     "tags": [
-      "standard",
-      "governance"
+      "制度",
+      "治理"
     ],
     "updated": "2026-06-28"
   },
@@ -52,10 +52,10 @@
     "type": "concept",
     "path": "entities/infosec-violation-accountability.md",
     "domain": "it-security",
-    "sub_domain": "governance",
+    "sub_domain": "治理",
     "tags": [
-      "standard",
-      "governance"
+      "制度",
+      "治理"
     ],
     "updated": "2026-06-28"
   },
@@ -66,8 +66,8 @@
     "domain": "it-security",
     "sub_domain": "secops",
     "tags": [
-      "standard",
-      "incident-response"
+      "制度",
+      "应急响应"
     ],
     "updated": "2026-06-28"
   },
@@ -78,9 +78,9 @@
     "domain": "it-security",
     "sub_domain": "infra-endpoint",
     "tags": [
-      "standard",
-      "endpoint",
-      "cloud"
+      "制度",
+      "终端安全",
+      "云桌面"
     ],
     "updated": "2026-06-28"
   },
@@ -89,10 +89,10 @@
     "type": "concept",
     "path": "entities/security-architecture-basics.md",
     "domain": "it-security",
-    "sub_domain": "governance",
+    "sub_domain": "治理",
     "tags": [
-      "standard",
-      "architecture"
+      "制度",
+      "架构"
     ],
     "updated": "2026-06-28"
   },
@@ -103,8 +103,8 @@
     "domain": "it-security",
     "sub_domain": "personnel",
     "tags": [
-      "standard",
-      "social-engineering"
+      "制度",
+      "社工防范"
     ],
     "updated": "2026-06-28"
   },
@@ -115,8 +115,8 @@
     "domain": "it-security",
     "sub_domain": "secops",
     "tags": [
-      "standard",
-      "vulnerability"
+      "制度",
+      "漏洞管理"
     ],
     "updated": "2026-06-28"
   },
@@ -125,11 +125,11 @@
     "type": "concept",
     "path": "concepts/data-security-responsibility.md",
     "domain": "it-security",
-    "sub_domain": "data-security",
+    "sub_domain": "数据安全",
     "tags": [
-      "governance",
-      "data-security",
-      "compliance"
+      "治理",
+      "数据安全",
+      "合规"
     ],
     "updated": "2026-06-28"
   },
@@ -140,10 +140,10 @@
     "domain": "it-security",
     "sub_domain": "secops",
     "tags": [
-      "hw",
-      "incident-response",
-      "network-security",
-      "training"
+      "护网",
+      "应急响应",
+      "网络安全",
+      "培训"
     ],
     "updated": "2026-06-28"
   },
@@ -154,10 +154,10 @@
     "domain": "it-security",
     "sub_domain": "standards",
     "tags": [
-      "standard",
-      "regulation",
-      "compliance",
-      "catalog"
+      "标准",
+      "法规",
+      "合规",
+      "目录"
     ],
     "updated": "2026-06-28"
   },
@@ -166,11 +166,11 @@
     "type": "concept",
     "path": "concepts/supply-chain-security.md",
     "domain": "it-security",
-    "sub_domain": "supply-chain",
+    "sub_domain": "供应链",
     "tags": [
-      "supply-chain",
-      "risk-management",
-      "third-party"
+      "供应链",
+      "风险管理",
+      "第三方"
     ],
     "updated": "2026-06-28"
   },
@@ -181,10 +181,10 @@
     "domain": "it-security",
     "sub_domain": "infra-endpoint",
     "tags": [
-      "endpoint",
-      "dlp",
-      "usb",
-      "ueba"
+      "终端安全",
+      "数据防泄漏",
+      "USB管控",
+      "行为分析"
     ],
     "updated": "2026-06-28"
   }

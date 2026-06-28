@@ -3,7 +3,7 @@ title: 社会工程学攻击违规处罚实施规范
 created: 2026-06-28
 updated: 2026-06-28
 type: concept
-tags: [standard, social-engineering]
+tags: [制度, 社工防范]
 domain: it-security
 sources: [飞书知识库/数据安全]
 ---

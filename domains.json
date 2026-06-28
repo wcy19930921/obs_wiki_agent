@@ -4,7 +4,7 @@
       "id": "it-security",
       "name": "IT网络与数据安全",
       "emoji": "🔐",
-      "tags": ["regulation", "standard", "compliance", "encryption", "network-security", "privacy", "incident-response", "risk-management", "audit", "governance", "threat-modeling", "penetration-test", "vulnerability", "apt", "dlp", "soc"],
+      "tags": ["法规", "标准", "合规", "encryption", "网络安全", "privacy", "应急响应", "风险管理", "audit", "治理", "threat-modeling", "penetration-test", "漏洞管理", "apt", "数据防泄漏", "soc"],
       "desc": "等保、关基、数据分类分级、个保法、应急响应"
     },
     {

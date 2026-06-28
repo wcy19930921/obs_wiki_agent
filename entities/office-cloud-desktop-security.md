@@ -3,7 +3,7 @@ title: 办公云桌面IT安全管理规范
 created: 2026-06-28
 updated: 2026-06-28
 type: concept
-tags: [standard, endpoint, cloud]
+tags: [制度, 终端安全, 云桌面]
 domain: it-security
 sources: [飞书知识库/数据安全]
 ---

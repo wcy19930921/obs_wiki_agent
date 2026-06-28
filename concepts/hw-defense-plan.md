@@ -3,7 +3,7 @@ title: 护网行动安全方案
 created: 2026-06-28
 updated: 2026-06-28
 type: concept
-tags: [hw, incident-response, network-security, training]
+tags: [护网, 应急响应, 网络安全, 培训]
 domain: it-security
 sources: [飞书知识库/数据安全]
 ---

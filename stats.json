@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-28 15:46:27",
+  "generated_at": "2026-06-28 15:49:27",
   "total_pages": 15,
   "type_count": {
     "entity": 0,
@@ -9,91 +9,95 @@
   },
   "top_tags": [
     {
-      "name": "standard",
-      "count": 11
+      "name": "制度",
+      "count": 10
     },
     {
-      "name": "data-security",
+      "name": "数据安全",
       "count": 3
     },
     {
-      "name": "governance",
+      "name": "治理",
       "count": 3
     },
     {
-      "name": "incident-response",
+      "name": "应急响应",
       "count": 2
     },
     {
-      "name": "endpoint",
+      "name": "终端安全",
       "count": 2
     },
     {
-      "name": "compliance",
+      "name": "合规",
       "count": 2
     },
     {
-      "name": "app-security",
+      "name": "应用安全",
       "count": 1
     },
     {
-      "name": "cloud",
+      "name": "云桌面",
       "count": 1
     },
     {
-      "name": "architecture",
+      "name": "架构",
       "count": 1
     },
     {
-      "name": "social-engineering",
+      "name": "社工防范",
       "count": 1
     },
     {
-      "name": "vulnerability",
+      "name": "漏洞管理",
       "count": 1
     },
     {
-      "name": "hw",
+      "name": "护网",
       "count": 1
     },
     {
-      "name": "network-security",
+      "name": "网络安全",
       "count": 1
     },
     {
-      "name": "training",
+      "name": "培训",
       "count": 1
     },
     {
-      "name": "regulation",
+      "name": "标准",
       "count": 1
     },
     {
-      "name": "catalog",
+      "name": "法规",
       "count": 1
     },
     {
-      "name": "supply-chain",
+      "name": "目录",
       "count": 1
     },
     {
-      "name": "risk-management",
+      "name": "供应链",
       "count": 1
     },
     {
-      "name": "third-party",
+      "name": "风险管理",
       "count": 1
     },
     {
-      "name": "dlp",
+      "name": "第三方",
       "count": 1
     },
     {
-      "name": "usb",
+      "name": "数据防泄漏",
       "count": 1
     },
     {
-      "name": "ueba",
+      "name": "USB管控",
+      "count": 1
+    },
+    {
+      "name": "行为分析",
       "count": 1
     }
   ],
@@ -142,8 +146,8 @@
       "path": "entities/app-security-management.md",
       "domain": "it-security",
       "tags": [
-        "standard",
-        "app-security"
+        "制度",
+        "应用安全"
       ],
       "updated": "2026-06-28"
     },
@@ -153,8 +157,8 @@
       "path": "entities/data-classification-implementation.md",
       "domain": "it-security",
       "tags": [
-        "standard",
-        "data-security"
+        "制度",
+        "数据安全"
       ],
       "updated": "2026-06-28"
     },
@@ -164,8 +168,8 @@
       "path": "entities/data-security-management-policy.md",
       "domain": "it-security",
       "tags": [
-        "standard",
-        "data-security"
+        "制度",
+        "数据安全"
       ],
       "updated": "2026-06-28"
     },
@@ -175,8 +179,8 @@
       "path": "entities/infosec-redline-policy.md",
       "domain": "it-security",
       "tags": [
-        "standard",
-        "governance"
+        "制度",
+        "治理"
       ],
       "updated": "2026-06-28"
     },
@@ -186,8 +190,8 @@
       "path": "entities/infosec-violation-accountability.md",
       "domain": "it-security",
       "tags": [
-        "standard",
-        "governance"
+        "制度",
+        "治理"
       ],
       "updated": "2026-06-28"
     },
@@ -197,8 +201,8 @@
       "path": "entities/network-incident-management.md",
       "domain": "it-security",
       "tags": [
-        "standard",
-        "incident-response"
+        "制度",
+        "应急响应"
       ],
       "updated": "2026-06-28"
     },
@@ -208,9 +212,9 @@
       "path": "entities/office-cloud-desktop-security.md",
       "domain": "it-security",
       "tags": [
-        "standard",
-        "endpoint",
-        "cloud"
+        "制度",
+        "终端安全",
+        "云桌面"
       ],
       "updated": "2026-06-28"
     },
@@ -220,8 +224,8 @@
       "path": "entities/security-architecture-basics.md",
       "domain": "it-security",
       "tags": [
-        "standard",
-        "architecture"
+        "制度",
+        "架构"
       ],
       "updated": "2026-06-28"
     },
@@ -231,8 +235,8 @@
       "path": "entities/social-engineering-penalty.md",
       "domain": "it-security",
       "tags": [
-        "standard",
-        "social-engineering"
+        "制度",
+        "社工防范"
       ],
       "updated": "2026-06-28"
     },
@@ -242,8 +246,8 @@
       "path": "entities/vulnerability-accountability.md",
       "domain": "it-security",
       "tags": [
-        "standard",
-        "vulnerability"
+        "制度",
+        "漏洞管理"
       ],
       "updated": "2026-06-28"
     }
