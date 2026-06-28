@@ -42,8 +42,10 @@ body{font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans SC
 .detail-card h3{font-size:.72rem;text-transform:uppercase;letter-spacing:.5px;color:var(--muted);margin-bottom:.6rem}
 .bar{display:flex;align-items:center;gap:.5rem;margin:.3rem 0;font-size:.82rem}.bar .bl{width:50px;color:var(--muted);flex-shrink:0}.bar .bt{flex:1;height:5px;background:var(--border);border-radius:3px;overflow:hidden}.bar .bf{height:100%;border-radius:3px;transition:width .3s}.bar .bv{width:26px;text-align:right;font-weight:500;flex-shrink:0}
 .f-entity{background:var(--blue)}.f-concept{background:#22c55e}.f-comparison{background:var(--accent)}.f-query{background:#a855f7}
-.tag{display:inline-block;padding:.12em .5em;border-radius:4px;font-size:.73rem;background:#eff6ff;color:#2563eb;margin:.12rem}
+.tag{display:inline-block;padding:.12em .5em;border-radius:4px;font-size:.73rem;background:#eff6ff;color:#2563eb;margin:.12rem;transition:all .15s}
+.tag-click{cursor:pointer}.tag-click:hover{background:#2563eb;color:#fff}
 [data-theme="dark"] .tag{background:#1e3a5f;color:#7dd3fc}
+[data-theme="dark"] .tag-click:hover{background:#3b82f6;color:#fff}
 .recent-item{display:flex;align-items:center;gap:.5rem;padding:.35rem 0;border-bottom:1px solid var(--border);font-size:.82rem}.recent-item:last-child{border:none}
 .rd{font-size:.7rem;color:var(--muted);min-width:42px}
 .rb{font-size:.62rem;padding:.1em .35em;border-radius:3px;min-width:36px;text-align:center;font-weight:600}
@@ -85,11 +87,14 @@ initTheme();
 // Data
 var TYPES={entity:'实体',concept:'概念',comparison:'对比',query:'查询'};
 var TL={entity:'rb-e',concept:'rb-c',comparison:'rb-x',query:'rb-q'};
+var DOMS_LOOKUP={'it-security':{emoji:'🔐',name:'IT网络与数据安全'},'auto-security':{emoji:'🚗',name:'智能网联汽车安全'},'investment':{emoji:'📈',name:'投资之路'},'daily':{emoji:'📝',name:'日常记录'},'ai-learning':{emoji:'🤖',name:'AI学习'},'other':{emoji:'📦',name:'其他'}};
+var allTags=[],allPages=[];
 
 async function init(){
   try{
     var sr=await fetch('stats.json');var s=await sr.json();
     var dr=await fetch('domains.json');var dm=await dr.json();
+    try{var pr=await fetch('page_list.json');allPages=await pr.json();allTags=s.top_tags.map(function(t){return t.name})}catch(e){}
     render(s,dm.domains)
   }catch(e){
     document.getElementById('app').innerHTML='<div class="empty"><h2>📊 暂无数据</h2><p>等 Wiki 有页面就会自动生成~</p></div>'
@@ -98,7 +103,7 @@ async function init(){
 
 function render(s,domains){
   document.getElementById('hero-sub').textContent='持续积累，知识复利';
-  document.getElementById('hero-stats').innerHTML='<div>📄 <strong>'+s.total_pages+'</strong> 篇文档</div><div>📈 近7天 <strong>'+s.trend['7d']+'</strong> 篇更新</div><div>✅ <strong>'+s.confidence_count.high+'</strong> 篇高置信度</div>';
+  document.getElementById('hero-stats').innerHTML='<div style="cursor:pointer" onclick="location.href=\'index.html\'">📄 <strong>'+s.total_pages+'</strong> 篇文档</div><div>📈 近7天 <strong>'+s.trend['7d']+'</strong> 篇更新</div><div>✅ <strong>'+s.confidence_count.high+'</strong> 篇高置信度</div>';
 
   if(s.total_pages===0){
     document.getElementById('app').innerHTML='<div class="empty"><h2>🌱 知识库还是空的</h2><p>开始往里喂材料吧</p></div>';return
@@ -126,10 +131,29 @@ function render(s,domains){
   });
   html+='</div>';
 
-  // Tag cloud
-  html+='<div class="detail-card"><h3>热门标签</h3>';
+  // Tag cloud — grouped by domain, clickable
+  html+='<div class="detail-card"><h3>🏷️ 标签分类</h3>';
+  // Build tag-to-domain mapping
+  var tagDomain={};allTags.forEach(function(tn){
+    var found=false;
+    allPages.forEach(function(p){
+      if(p.tags&&p.tags.indexOf(tn)>=0&&!found){tagDomain[tn]=p.domain;found=true}
+    });
+  });
+  var domainTags={};
   s.top_tags.forEach(function(t){
-    html+='<span class="tag" style="font-size:'+(.72+t.count/maxType*.22)+'rem">'+t.name+' '+t.count+'</span>';
+    var d=tagDomain[t.name]||'other';
+    if(!domainTags[d])domainTags[d]=[];
+    domainTags[d].push(t);
+  });
+  var domOrder=['it-security','auto-security','investment','ai-learning','daily','other'];
+  domOrder.forEach(function(dk){
+    if(!domainTags[dk]||domainTags[dk].length===0)return;
+    var dd=DOMS_LOOKUP[dk]||{emoji:'📦',name:dk};
+    html+='<div style="margin:.6rem 0 .3rem;font-size:.72rem;font-weight:600;color:var(--muted)">'+dd.emoji+' '+dd.name+'</div>';
+    domainTags[dk].forEach(function(t){
+      html+='<span class="tag tag-click" onclick="location.href=\'index.html?domain='+dk+'&tag='+encodeURIComponent(t.name)+'\'" title="点击筛选">'+t.name+' <span style="opacity:.6">'+t.count+'</span></span>';
+    });
   });
   html+='</div>';
 
@@ -141,10 +165,10 @@ function render(s,domains){
   html+='<div style="margin-top:.6rem;font-size:.8rem;color:var(--muted)">'+(s.trend['7d']>0?'🔥 持续更新中':s.trend['14d']>0?'📖 近期有更新':'💤 最近较安静')+'</div>';
   html+='</div></div>';
 
-  // Recent
+  // Recent — clickable
   html+='<div class="sec-title">📅 最近更新</div><div class="detail-card">';
   s.recent.slice(0,8).forEach(function(p){
-    html+='<div class="recent-item"><span class="rd">'+(p.updated.slice(-5)||'-')+'</span><span class="rb '+TL[p.type]+'">'+p.type+'</span><span>'+p.title+'</span></div>';
+    html+='<div class="recent-item" style="cursor:pointer" onclick="location.href=\'index.html?page='+encodeURIComponent(p.path)+'\'"><span class="rd">'+(p.updated.slice(-5)||'-')+'</span><span class="rb '+TL[p.type]+'">'+p.type+'</span><span>'+p.title+'</span></div>';
   });
   html+='</div>';
 

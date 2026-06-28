@@ -111,9 +111,13 @@ function esc(s){return s.replace(/'/g,"\\'")}
 async function init(){
   var p=new URLSearchParams(location.search);
   currentDomain=p.get('domain')||'';
+  var directPage=p.get('page')||'';
+  var filterTag=p.get('tag')||'';
   try{var r1=await fetch('page_list.json');allPages=await r1.json()}catch(e){allPages=[]}
   try{var r2=await fetch('sub_domains.json');var sd=await r2.json();subDomains=sd.sub_domains[currentDomain]||[]}catch(e){}
   buildSidebar();
+  if(directPage){viewPage(directPage,directPage.split('/').pop().replace('.md','').replace(/-/g,' '));return}
+  if(filterTag){showTagFilter(filterTag,currentDomain);return}
   showList()
 }
 
@@ -181,6 +185,19 @@ function filterBySub(domain,sub){currentDomain=domain;currentView='list';
   document.getElementById('tocPanel').classList.remove('show');
   var d=DOMS[domain];var info=null;subDomains.forEach(function(s){if(s.id===sub)info=s});
   var html='<div class="breadcrumb"><a href="dashboard.html">仪表盘</a> / <a href="#" onclick="showList()">'+d.name+'</a> / '+(info?info.name:sub)+'</div>';
+  html+='<div class="card-grid">';
+  pages.forEach(function(p){html+='<div class="card" onclick="viewPage(\''+p.path+'\',\''+esc(p.title)+'\')"><div class="card-title">'+p.title+'</div><div class="card-meta"><span class="badge '+BADGES[p.type]+'">'+TYPES[p.type]+'</span> · '+p.updated+'</div><div class="card-tags">'+(p.tags||[]).slice(0,3).map(function(t){return '<span class="tag">'+t+'</span>'}).join('')+'</div></div>'});
+  html+='</div>';
+  document.getElementById('content').innerHTML=html
+}
+
+function showTagFilter(tag,domain){
+  currentView='list';currentDomain=domain;
+  var pages=allPages.filter(function(p){return p.domain===domain&&p.tags&&p.tags.indexOf(tag)>=0});
+  document.getElementById('tocPanel').classList.remove('show');
+  var d=DOMS[domain]||{emoji:'📦',name:domain};
+  var html='<div class="breadcrumb"><a href="dashboard.html">仪表盘</a> / '+d.name+' / 🏷️ '+tag+'</div>';
+  html+='<div style="font-size:.78rem;color:var(--muted);margin-bottom:1rem">标签筛选：<strong>'+tag+'</strong> — 共 <strong>'+pages.length+'</strong> 篇</div>';
   html+='<div class="card-grid">';
   pages.forEach(function(p){html+='<div class="card" onclick="viewPage(\''+p.path+'\',\''+esc(p.title)+'\')"><div class="card-title">'+p.title+'</div><div class="card-meta"><span class="badge '+BADGES[p.type]+'">'+TYPES[p.type]+'</span> · '+p.updated+'</div><div class="card-tags">'+(p.tags||[]).slice(0,3).map(function(t){return '<span class="tag">'+t+'</span>'}).join('')+'</div></div>'});
   html+='</div>';
