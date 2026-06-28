@@ -140,18 +140,8 @@ function render(s,domains){
   });
   html+='</div>';
 
-  // Detail row: types + tags
+  // Tag cloud + Trend
   html+='<div class="sec-title">📊 数据总览</div><div class="detail-row">';
-  
-  // Type bars — 动态使用实际类型
-  html+='<div class="detail-card"><h3>按类型</h3>';
-  var typeColors = {'制度':'f-entity','方案':'f-concept','报告':'f-comparison','案例':'f-query','标准':'f-entity'};
-  var types = s.type_count || {};
-  Object.keys(types).sort(function(a,b){return types[b]-types[a]}).forEach(function(t){
-    var color = typeColors[t] || 'f-entity';
-    html+='<div class="bar"><span class="bl">'+t+'</span><div class="bt"><div class="bf '+color+'" style="width:'+(types[t]/Math.max(1,Math.max(...Object.values(types)))*100)+'%"></div></div><span class="bv">'+types[t]+'</span></div>';
-  });
-  html+='</div>';
 
   // Tag cloud — grouped by domain, clickable
   html+='<div class="detail-card"><h3>🏷️ 标签分类</h3>';
