@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-06-28 16:56:29",
-  "total_pages": 40,
+  "generated_at": "2026-06-30 21:58:58",
+  "total_pages": 41,
   "type_count": {
     "制度": 14,
     "方案": 14,
-    "报告": 9,
+    "报告": 10,
     "标准": 1,
     "案例": 2
   },
@@ -15,7 +15,7 @@
     },
     {
       "name": "汽车安全",
-      "count": 8
+      "count": 9
     },
     {
       "name": "投资",
@@ -121,7 +121,7 @@
       "id": "auto-security",
       "name": "智能网联汽车安全",
       "emoji": "🚗",
-      "count": 8
+      "count": 9
     },
     {
       "id": "investment",
@@ -150,119 +150,123 @@
   "contested": 0,
   "recent": [
     {
-      "title": "2026年股票投资实盘记录",
+      "title": "智能网联汽车安全行业动态与基础",
       "type": "报告",
-      "path": "concepts/2026年股票投资实盘记录.md",
-      "domain": "investment",
-      "tags": [
-        "投资",
-        "实盘"
-      ],
-      "updated": "2026-06-28"
-    },
-    {
-      "title": "小米辣的测试文档",
-      "type": "案例",
-      "path": "concepts/小米辣的测试文档.md",
-      "domain": "daily",
-      "tags": [
-        "日常"
-      ],
-      "updated": "2026-06-28"
-    },
-    {
-      "title": "2026年投资实盘复盘",
-      "type": "报告",
-      "path": "concepts/2026年投资实盘复盘.md",
-      "domain": "investment",
-      "tags": [
-        "投资",
-        "实盘"
-      ],
-      "updated": "2026-06-28"
-    },
-    {
-      "title": "汽车板块低估值轮动分析",
-      "type": "报告",
-      "path": "concepts/汽车板块低估值轮动分析.md",
-      "domain": "investment",
-      "tags": [
-        "投资",
-        "汽车"
-      ],
-      "updated": "2026-06-28"
-    },
-    {
-      "title": "股票投资分析报告",
-      "type": "报告",
-      "path": "concepts/股票投资分析报告.md",
-      "domain": "investment",
-      "tags": [
-        "投资",
-        "个股分析"
-      ],
-      "updated": "2026-06-28"
-    },
-    {
-      "title": "A股板块低估值轮动筛选日报",
-      "type": "报告",
-      "path": "concepts/a股板块低估值轮动筛选日报.md",
-      "domain": "investment",
-      "tags": [
-        "投资",
-        "板块轮动"
-      ],
-      "updated": "2026-06-28"
-    },
-    {
-      "title": "投资最重要的事蒸馏笔记",
-      "type": "报告",
-      "path": "concepts/投资最重要的事蒸馏笔记.md",
-      "domain": "investment",
-      "tags": [
-        "投资",
-        "读书笔记"
-      ],
-      "updated": "2026-06-28"
-    },
-    {
-      "title": "小米辣·A股仪表盘",
-      "type": "方案",
-      "path": "concepts/小米辣-a股仪表盘.md",
-      "domain": "investment",
-      "tags": [
-        "投资",
-        "仪表盘"
-      ],
-      "updated": "2026-06-28"
-    },
-    {
-      "title": "智能汽车信息安全测试方案",
-      "type": "方案",
-      "path": "concepts/智能汽车信息安全测试方案.md",
+      "path": "concepts/智能网联汽车安全行业动态.md",
       "domain": "auto-security",
       "tags": [
         "汽车安全",
-        "测试"
+        "行业动态",
+        "政策法规"
+      ],
+      "updated": "2026-06-29"
+    },
+    {
+      "title": "APP安全管理制度",
+      "type": "制度",
+      "path": "entities/app安全管理制度.md",
+      "domain": "it-security",
+      "tags": [
+        "应用安全",
+        "制度"
       ],
       "updated": "2026-06-28"
     },
     {
-      "title": "智能网联汽车PIA合规测试方案",
+      "title": "dlp采购需求清单",
       "type": "方案",
-      "path": "concepts/智能网联汽车pia合规测试方案.md",
-      "domain": "auto-security",
+      "path": "entities/dlp采购需求清单.md",
+      "domain": "it-security",
       "tags": [
-        "汽车安全",
-        "合规",
-        "PIA"
+        "终端安全",
+        "制度",
+        "数据防泄漏"
+      ],
+      "updated": "2026-06-28"
+    },
+    {
+      "title": "信息安全红线制度",
+      "type": "制度",
+      "path": "entities/信息安全红线制度.md",
+      "domain": "it-security",
+      "tags": [
+        "治理",
+        "制度"
+      ],
+      "updated": "2026-06-28"
+    },
+    {
+      "title": "信息安全违规问责管理办法",
+      "type": "制度",
+      "path": "entities/信息安全违规问责管理办法.md",
+      "domain": "it-security",
+      "tags": [
+        "治理",
+        "制度"
+      ],
+      "updated": "2026-06-28"
+    },
+    {
+      "title": "信息科技外包风险管理评估报告",
+      "type": "报告",
+      "path": "entities/信息科技外包风险管理评估报告.md",
+      "domain": "it-security",
+      "tags": [
+        "风险管理",
+        "报告",
+        "供应链"
+      ],
+      "updated": "2026-06-28"
+    },
+    {
+      "title": "信息科技风险管理报告",
+      "type": "报告",
+      "path": "entities/信息科技风险管理报告.md",
+      "domain": "it-security",
+      "tags": [
+        "风险管理",
+        "报告"
+      ],
+      "updated": "2026-06-28"
+    },
+    {
+      "title": "办公云桌面IT安全管理规范",
+      "type": "制度",
+      "path": "entities/办公云桌面it安全管理规范.md",
+      "domain": "it-security",
+      "tags": [
+        "终端安全",
+        "制度",
+        "云桌面"
+      ],
+      "updated": "2026-06-28"
+    },
+    {
+      "title": "办公终端产品选型需求清单",
+      "type": "方案",
+      "path": "entities/办公终端产品选型需求清单.md",
+      "domain": "it-security",
+      "tags": [
+        "终端安全",
+        "制度"
+      ],
+      "updated": "2026-06-28"
+    },
+    {
+      "title": "数据安全管理制度",
+      "type": "制度",
+      "path": "entities/数据安全管理制度.md",
+      "domain": "it-security",
+      "tags": [
+        "数据安全",
+        "制度"
       ],
       "updated": "2026-06-28"
     }
   ],
   "trend": {
-    "30d": 40,
-    "14d": 40,
-    "7d": 40
+    "30d": 41,
+    "14d": 41,
+    "7d": 41
   }
 }
